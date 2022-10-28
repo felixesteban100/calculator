@@ -1,38 +1,248 @@
-.App {
-  text-align: center;
+
+*{
+    margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root{
+    margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+    margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App1{
+    /* Theme 1 */
+    --main-background1: hsl(222, 26%, 31%);
+    --toogle-background1: hsl(223, 31%, 20%);
+    --screen-background1: hsl(224, 36%, 15%);
+
+    --key-1-background1: hsl(225, 21%, 49%);
+    --key-1-shadow1: hsl(224, 28%, 35%);
+
+    --key-2-background1: hsl(6, 63%, 50%);
+    --key-2-shadow1: hsl(6, 70%, 34%);
+
+    --key-3-background1: hsl(30, 25%, 89%);
+    --key-3-shadow1: hsl(28, 16%, 65%);
+
+    --toogle1: hsl(6, 63%, 50%);
+
+    --text-button1: hsl(221, 14%, 31%);
+    --text1: hsl(0, 0%, 100%);
+
+    background-color: var(--main-background1);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
 }
 
-.App-link {
-  color: #61dafb;
+.App2{
+    /* Theme 2 */
+    --main-background1: hsl(0, 0%, 90%);
+    --toogle-background1: hsl(0, 5%, 81%);
+    --screen-background1: hsl(0, 0%, 93%);
+
+    --key-1-background1: hsl(185, 42%, 37%);
+    --key-1-shadow1: hsl(185, 58%, 25%);
+
+    --key-2-background1: hsl(25, 98%, 40%);
+    --key-2-shadow1: hsl(25, 99%, 27%);
+
+    --key-3-background1: hsl(45, 7%, 89%);
+    --key-3-shadow1: hsl(35, 11%, 61%);
+
+    --toogle1: hsl(25, 98%, 40%);
+
+    --text-button1: hsl(60, 10%, 19%);
+    /* --text1: hsl(0, 0%, 100%); */
+    --text1: hsl(0, 3%, 13%);
+
+    background-color: var(--main-background1);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App3{
+    /* Theme 3 */
+    --main-background1: hsl(268, 75%, 9%);
+    --toogle-background1: hsl(268, 71%, 12%);
+    --screen-background1: hsl(268, 71%, 12%);
+
+    --key-1-background1: hsl(281, 89%, 26%);
+    --key-1-shadow1: hsl(285, 91%, 52%);
+
+    --key-2-background1: hsl(176, 100%, 44%);
+    --key-2-shadow1: hsl(177, 92%, 70%);
+
+    --key-3-background1: hsl(268, 47%, 21%);
+    --key-3-shadow1: hsl(290, 70%, 36%);
+
+    --toogle1: hsl(176, 100%, 44%);
+
+    --text-button1: hsl(52, 100%, 62%);
+    --text1: hsl(52, 100%, 62%);
+
+    background-color: var(--main-background1);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+}
+
+.title{
+    color: var(--text1);
+}
+
+.toogle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toogle--circle{
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: var(--toogle1);
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+.toogle-text{
+    color: var(--text1) ;
+    font-weight: 800;
+    margin-right: 10px;
+}
+
+.position2{
+    margin-left: 1.5rem;
+}
+
+.position3{
+    margin-left: 2.5rem;
+}
+
+.tooglebutton{
+    height: 2rem;
+    width: 4rem;
+    background-color: var(--toogle-background1);
+    border-radius: 1rem;
+}
+
+.calculator{
+    height: 45rem;
+    max-width: 40rem;
+    margin: 12vh auto;
+}
+
+.top-calculator{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.screen{
+    margin: 1rem auto;
+    height: 8rem;
+    width: 85%;
+    background-color: var(--screen-background1);
+    border-radius: 1rem;
+}
+
+.screen-result{
+    color: var(--text1);
+    text-align: end;
+    background-color: var(--screen-background1);
+    height: 90%;
+    width: 90%;
+    border: none;
+    font-size: 4rem;
+    padding: 0.2rem;
+    border-radius: 1rem;
+    pointer-events: none;
+}
+
+
+.keyboard{
+    height: 33.2rem;
+    width: 85%;
+    background-color: var(--toogle-background1);
+    margin: 0 auto;
+    border-radius: 1rem;
+}
+
+/* .path-keys{
+    margin: 0 1rem;
+}
+ */
+.keys{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(2rem, 6rem);
+    justify-content: center;
+}
+
+.keys--bottom{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(8rem, 8rem);
+    justify-content: center;
+}
+
+.key{
+    height: 3.5rem;
+    width: 6rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    margin: 2rem auto;
+}
+
+.key:active{
+    top: 5px;
+    position: relative;
+}
+
+.key--bottom{
+    height: 4rem;
+    width: 13.5rem;
+    font-size: 2.5rem;
+    padding-top: 1rem;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.key--bottom:active{
+    top: 5px;
+    position: relative;
+}
+
+.number-or-operation{
+    background-color: var(--key-3-background1);
+    box-shadow: 0 0.3rem 0 0 var(--key-3-shadow1);
+    color: var(--text-button1);
+}
+
+.del{
+    background-color: var(--key-1-background1);
+    box-shadow: 0 0.3rem 0 0 var(--key-1-shadow1);
+    color: var(--text1);
+}
+
+.equal{
+    background-color: var(--key-2-background1);
+    box-shadow: 0 0.3rem 0 0 var(--key-2-shadow1);
+    color: var(--text1);
 }
