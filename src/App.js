@@ -13,6 +13,7 @@ function App() {
     if(localStorageTheme !== null){
       setTheme(parseInt(localStorageTheme))
     }else{
+      localStorage.setItem('theme', 1)
       setTheme(1)
     }
   }, [])
