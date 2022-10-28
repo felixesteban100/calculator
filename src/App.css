@@ -246,3 +246,35 @@ body{
     box-shadow: 0 0.3rem 0 0 var(--key-2-shadow1);
     color: var(--text1);
 }
+
+
+@media (max-width: 500px) {
+    .calculator{
+        height: 45rem;
+        max-width: 40rem;
+        margin: 5vh auto;
+    }
+    
+    .screen-result{
+        font-size: 3rem;
+    }
+
+    .key{
+        height: 4rem;
+        width: 4.5rem;
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .key > p{
+        text-align: center;
+    }
+
+    .key--bottom{
+        height: 4rem;
+        width: 8rem;
+        font-size: 2.5rem;
+    }
+}

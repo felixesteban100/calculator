@@ -10,7 +10,7 @@ function Buttons(props) {
         // console.log(typeof current, current)
         if(typeof current === "number" || operationCharacters.includes(current)){ // yellow light (number)
             return (
-                <div className='key number-or-operation' value={current} onClick={() => props.addCharacter(current)} key={index}>{current}</div>
+                <div className='key number-or-operation' value={current} onClick={() => props.addCharacter(current)} key={index}><p>{current}</p></div>
             )
         }else{ // if(current === "DEL"){ // blue light ()
             return (
