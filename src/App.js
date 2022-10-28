@@ -10,7 +10,7 @@ function App() {
 
   React.useEffect(()=> {
     let localStorageTheme = localStorage.getItem('theme')
-    if(localStorageTheme !== NaN && localStorageTheme !==null){
+    if(localStorageTheme !== NaN && localStorageTheme !== null){
       setTheme(parseInt(localStorageTheme))
     }else{
       localStorage.setItem('theme', 1)
