@@ -9,22 +9,22 @@ function App() {
   const [theme, setTheme] = React.useState(1)
 
   React.useEffect(()=> {
-    let localStorageTheme = localStorage.getItem('theme')
-    if(localStorageTheme !== NaN && localStorageTheme !== null){
+    let localStorageTheme = localStorage.getItem('theme_calculator')
+    if(isNaN(localStorageTheme) !== true && localStorageTheme !== null){
       setTheme(parseInt(localStorageTheme))
     }else{
-      localStorage.setItem('theme', 1)
+      localStorage.setItem('theme_calculator', 1)
       setTheme(1)
     }
   }, [])
 
   function changeTheme(){
-    let localStorageTheme = localStorage.getItem('theme')
+    let localStorageTheme = localStorage.getItem('theme_calculator')
     let next = parseInt(localStorageTheme) + 1
     if(parseInt(localStorageTheme) === 3){
-      localStorage.setItem('theme', 1)
+      localStorage.setItem('theme_calculator', 1)
     }else{
-      localStorage.setItem('theme', next)
+      localStorage.setItem('theme_calculator', next)
     }
     
     setTheme(prevValue => {
