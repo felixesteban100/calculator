@@ -40,6 +40,7 @@ function App() {
     current = current.toString()
     if(current === "Backspace") current = 'DEL'
     if(current === "Enter") current = '='
+    if(current === "*") current = 'x'
     let allCharacters = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '/', '*', '-', '+', '.', 'RESET', 'DEL', '=']
     
     if (allCharacters.includes(current)) {
