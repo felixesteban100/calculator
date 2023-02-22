@@ -37,43 +37,49 @@ function App() {
   }
 
   function addCharacter(current){
-    // console.log(current)
-    let characters = ['x','/','+','-']
-    let solve = false
-    setResult(prevValue => {
-      // console.log(prevValue)
-      for(let i = 0; i < prevValue.length; i++){
-        if(characters.includes(prevValue[i])){
-          solve = true
+    if(current === "Backspace") current = 'DEL'
+    if(current === "Enter") current = '='
+    let allCharacters = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '/', '*', '-', '+', '.', 'RESET', 'DEL', '=']
+    
+    if (allCharacters.includes(current)) {
+      // console.log(current)
+      let characters = ['x','/','+','-']
+      let solve = false
+      setResult(prevValue => {
+        // console.log(prevValue)
+        for(let i = 0; i < prevValue.length; i++){
+          if(characters.includes(prevValue[i])){
+            solve = true
+          }
         }
-      }
 
-      if (prevValue.length === 11) {
-        if(current === "DEL"){
-          let deleting = prevValue.slice(0, -1)
-          return deleting
-        }else if(current === "RESET"){
-          return "0"
+        if (prevValue.length === 11) {
+          if(current === "DEL"){
+            let deleting = prevValue.slice(0, -1)
+            return deleting
+          }else if(current === "RESET"){
+            return "0"
+          }else{
+            return prevValue
+          }
+        }else if(solve && characters.includes(current)){
+          return math(prevValue) + current
         }else{
-          return prevValue
+          if(prevValue === "0" && current !== "RESET"){
+            return current
+          }else if(current === "DEL"){
+            let deleting = prevValue.toString().slice(0, -1)
+            return deleting
+          }else if(current === "RESET"){
+            return "0"
+          }else if(current === "="){
+            return math(prevValue)
+          }else{
+            return prevValue + `${current}`
+          }
         }
-      }else if(solve && characters.includes(current)){
-        return math(prevValue) + current
-      }else{
-        if(prevValue === "0" && current !== "RESET"){
-          return current
-        }else if(current === "DEL"){
-          let deleting = prevValue.slice(0, -1)
-          return deleting
-        }else if(current === "RESET"){
-          return "0"
-        }else if(current === "="){
-          return math(prevValue)
-        }else{
-          return prevValue + `${current}`
-        }
-      }
-    })
+      })      
+    }
   }
 
   function math(result){
@@ -129,7 +135,7 @@ function App() {
   // console.log(style())
 
   return (
-    <div className={style()}>
+    <div className={style()}tabIndex={0} onKeyDown={(event) => addCharacter(event.key)}>
       <div className='calculator'>
       <div className='top-calculator'>
         <h2 className='title'>Calculator</h2>
