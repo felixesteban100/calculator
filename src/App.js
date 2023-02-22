@@ -37,6 +37,7 @@ function App() {
   }
 
   function addCharacter(current){
+    current = current.toString()
     if(current === "Backspace") current = 'DEL'
     if(current === "Enter") current = '='
     let allCharacters = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '/', '*', '-', '+', '.', 'RESET', 'DEL', '=']
